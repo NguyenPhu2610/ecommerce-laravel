@@ -3,7 +3,13 @@
     "About": "About",
     "Contact": "Contact",
     "Product": "Product",
+    "Shop": "Shop",
     "Service": "Service",
+    "Blog": "Blog",
     "Cart": "Cart",
-    "Login": "Login"
+    "Login": "Login",
+    "Help": "Help",
+    "Policy": "Free shipping, 30-day return or refund guarantee.",
+    "En": "English",
+    "Vi": "Vietnamese"
 }

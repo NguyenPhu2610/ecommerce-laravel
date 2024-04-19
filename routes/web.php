@@ -15,7 +15,38 @@ use App\Http\Middleware\Localization;
 |
 */
 Route::get('lang/{locale}', [HomeController::class, 'lang']);
-
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 });
+
+Route::get('/shop', function () {
+    return view('user.pages.product');
+});
+
+Route::name('user.')->group(function () {
+    Route::get('/shop', function () {
+        return view('user.pages.product');
+    })->name('shop');
+    
+    Route::get('/product', function () {
+        return view('user.pages.detail');
+    })->name('product');
+
+    Route::get('/cart', function () {
+        return view('user.pages.cart');
+    })->name('cart');
+
+    Route::get('/login', function () {
+        return view('user.pages.login');
+    })->name('login');
+
+    Route::get('/register', function () {
+        return view('user.pages.register');
+    })->name('register');
+
+    Route::get('/', function () {
+        return view('user.pages.home');
+    })->name('home');
+});
+
+
