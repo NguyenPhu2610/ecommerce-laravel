@@ -60,10 +60,19 @@
                 <a href="#">Help</a>
             </div>
             <div class="offcanvas__top__hover">
-                <span>English <i class="arrow_carrot-down"></i></span>
+                <span>
+                    @switch(session()->get('locale'))
+                        @case('vi')
+                            {{ __('Vi') }}
+                        @break
+                        @default
+                            {{ __('En') }}
+                    @endswitch
+                    <i class="arrow_carrot-down"></i>
+                </span>
                 <ul>
-                    <li>English</li>
-                    <li>Vietnamese</li>
+                    <li><a href="lang/en">{{ __('En') }}</a></li>
+                    <li><a href="lang/vi">{{ __('Vi') }}</a></li>
                 </ul>
             </div>
         </div>
@@ -108,10 +117,19 @@
                                     <a href="#">Help</a>
                                 </div>
                                 <div class="header__top__hover">
-                                    <span>English <i class="arrow_carrot-down"></i></span>
+                                    <span> 
+                                        @switch(session()->get('locale'))
+                                            @case('vi')
+                                                {{ __('Vi') }}
+                                            @break
+                                            @default
+                                                {{ __('En') }}
+                                        @endswitch
+                                        <i class="arrow_carrot-down"></i>
+                                    </span>
                                     <ul>
-                                        <li>English</li>
-                                        <li>Vietnamese</li>
+                                        <li><a href="lang/en">{{ __('En') }}</a></li>
+                                        <li><a href="lang/vi">{{ __('Vi') }}</a></li>
                                         <!-- <li>USD</li> -->
                                     </ul>
                                 </div>
@@ -130,7 +148,7 @@
                     <div class="col-lg-3 col-md-3">
                         
                     </div>
-    
+     
                     <div class="col-lg-6 col-md-6">
                         <div class="header__search__box">
                             <input class="header__search" placeholder="Search what you looking for..."></input>

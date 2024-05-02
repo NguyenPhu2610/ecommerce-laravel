@@ -15,6 +15,7 @@ use App\Http\Middleware\Localization;
 |
 */
 Route::get('lang/{locale}', [HomeController::class, 'lang']);
+
 Route::get('/welcome', function () {
     return view('welcome');
 });

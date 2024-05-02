@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Brand;
+use App\Models\Category;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -19,11 +21,11 @@ return new class extends Migration
             $table->float('price', 8, 2);
             // $table->float('rate', 5, 1);
             // $table->int('rating');
-            $table->int('sold');    
-            $table->int('stock');
+            $table->integer('sold');    
+            $table->integer('stock');
             $table->timestamps();
-            $table->foreignId('brand_id');
-            $table->foreignId('category_id');
+            $table->foreignIdFor(Brand::class);
+            $table->foreignIdFor(Category::class);
         });
     }
 

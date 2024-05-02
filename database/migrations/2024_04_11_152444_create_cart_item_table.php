@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Cart;
+use App\Models\InnerProduct;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('cart_item', function (Blueprint $table) {
             $table->id();
-            $table->int('quantity');
-            $table->foreignId('product_id');
-            $table->foreignId('cart_id');
+            $table->integer('quantity');
+            $table->foreignIdFor(InnerProduct::class);
+            $table->foreignIdFor(Cart::class);
             $table->timestamps();
         });
     }

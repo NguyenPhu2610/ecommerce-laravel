@@ -364,13 +364,16 @@ header {
 .header__top__hover ul li {
   text-align: center;
   list-style: none;
+}
+
+.header__top__hover ul li a {
   font-size: 13px;
   color: var(--black-normal);
   padding: 2px 15px;
   cursor: pointer;
 }
 
-.header__top__hover ul li:hover {
+.header__top__hover ul li a:hover {
   color: var(--red-light);
 }
 
@@ -3751,6 +3754,7 @@ header {
     position: absolute;
     left: 0;
     top: 44px;
+    min-width: 100px;
     opacity: 0;
     visibility: hidden;
     z-index: 3;
@@ -3760,6 +3764,8 @@ header {
   }
   .offcanvas__top__hover ul li {
     list-style: none;
+  }
+  .offcanvas__top__hover ul li a {
     font-size: 13px;
     color: var(--white-normal);
     padding: 2px 15px;

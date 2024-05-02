@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Product;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -16,9 +17,9 @@ return new class extends Migration
             $table->string('color');
             $table->string('size');
             $table->string('image');
-            $table->int('stock');
+            $table->integer('stock');
             $table->float('price', 8, 2);
-            $table->foreignId('product_id');
+            $table->foreignIdFor(Product::class);
             $table->timestamps();
         });
     }
