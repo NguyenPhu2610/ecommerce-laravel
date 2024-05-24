@@ -13,9 +13,14 @@ class Product extends Model
 
     protected $table = 'products';
 
-    public function innerProduct(): HasMany
+    public function innerProducts(): HasMany
     {
-        return $this->hasMany(InnerProduct::class);
+        return $this->hasMany(InnerProduct::class, 'product_id');
+    }
+
+    public function images(): HasMany
+    {
+        return $this->hasMany(productImage::class);
     }
 
     public function rating(): HasMany

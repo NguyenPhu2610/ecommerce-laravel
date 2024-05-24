@@ -1,34 +1,14 @@
-/******************************************************************
-  Template Name: Male Fashion
-  Description: Male Fashion - ecommerce teplate
-  Author: Colorib
-  Author URI: https://www.colorib.com/
-  Version: 1.0
-  Created: Colorib 
-******************************************************************/
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Fragment+Mono:ital@0;1&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-/*------------------------------------------------------------------
-[Table of contents]
-
-1.  Template default CSS
-	1.1	Variables
-	1.2	Mixins
-	1.3	Flexbox
-	1.4	Reset
-2.  Helper Css
-3.  Header Section
-4.  Hero Section
-5.  Banner Section
-6.  Product Section
-7.  Intagram Section
-8.  Latest Section
-9.  Contact
-10.  Footer Style
--------------------------------------------------------------------*/
-
-/*----------------------------------------*/
-/* Template default CSS
-/*----------------------------------------*/
+* {
+margin: 0;
+padding: 0;
+border: 0;
+outline: 0;
+font-size: 100%;
+vertical-align: baseline;
+background: transparent;
+}
 
 :root {
   --black-normal: #111111;
@@ -47,8 +27,12 @@
 html,
 body {
   height: 100%;
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
   -webkit-font-smoothing: antialiased;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */  
 }
 
 h1,
@@ -60,7 +44,7 @@ h6 {
   margin: 0;
   color: var(--black-normal);
   font-weight: 400;
-  font-family: "Nunito Sans", sans-serif;
+  /* font-family: "Nunito Sans", sans-serif; */
 }
 
 h1 {
@@ -89,7 +73,7 @@ h6 {
 
 p {
   font-size: 13px;
-  font-family: "Nunito Sans", sans-serif;
+  /* font-family: "Nunito Sans", sans-serif; */
   color: #3d3d3d;
   font-weight: 400;
   line-height: 25px;
@@ -546,8 +530,9 @@ header {
   background-color: var(--red-dark);
   width: 20px;
   height: 20px;
+  border: 2px solid var(--white-normal);
   border-radius: 50%;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -994,7 +979,7 @@ header {
   color: #b7b7b7;
 }
 
-.product__item:hover .product__item__pic .product__hover {
+/* .product__item:hover .product__item__pic .product__hover {
   right: 20px;
   opacity: 1;
 }
@@ -1007,11 +992,11 @@ header {
 
 .product__item:hover .product__item__text h6 {
   opacity: 0;
-}
+} */
 
-.product__item:hover .product__item__text .product__color__select {
+/* .product__item:hover .product__item__text .product__color__select {
   opacity: 1;
-}
+} */
 
 .product__item__pic {
   height: 260px;
@@ -1033,16 +1018,16 @@ header {
   top: 20px;
 }
 
-.product__item__pic .product__hover {
+/* .product__item__pic .product__hover {
   position: absolute;
   right: -200px;
   top: 20px;
   -webkit-transition: all, 0.8s;
   -o-transition: all, 0.8s;
   transition: all, 0.8s;
-}
+} */
 
-.product__item__pic .product__hover li {
+/* .product__item__pic .product__hover li {
   list-style: none;
   margin-bottom: 10px;
   position: relative;
@@ -1088,14 +1073,14 @@ header {
   background: var(--white-normal);
   padding: 10px;
   display: inline-block;
-}
+} */
 
 .product__item__text {
-  padding-top: 25px;
+  padding-top: 15px;
   position: relative;
 }
 
-.product__item__text a {
+/* .product__item__text .add-cart {
   font-size: 15px;
   color: var(--red-dark);
   font-weight: 700;
@@ -1107,19 +1092,20 @@ header {
   -webkit-transition: all, 0.3s;
   -o-transition: all, 0.3s;
   transition: all, 0.3s;
-}
+} */
 
-.product__item__text h6 {
+.product__item__text a h6 {
   color: var(--black-normal);
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 13px;
+  font-weight: 400;
   margin-bottom: 5px;
   -webkit-transition: all, 0.3s;
   -o-transition: all, 0.3s;
   transition: all, 0.3s;
+  min-height: 40px;
 }
 
-.product__item__text .rating {
+/* .product__item__text .rating {
   margin-bottom: 6px;
 }
 
@@ -1127,14 +1113,52 @@ header {
   font-size: 14px;
   color: #b7b7b7;
   margin-right: -5px;
-}
+} */
 
 .product__item__text h5 {
   color: #0d0d0d;
-  font-weight: 700;
+  font-weight: 500;
+  font-size: 15px;
 }
 
-.product__item__text .product__color__select {
+.product__item__text .product__rate--sold .rate i{
+  color: var(--yellow-rate);
+  font-size: 10px;
+}
+
+.product__item__text .product__rate--sold .sold {
+  margin-left: 10px;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+/* .product__item__text .product__btn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product__item__text .product__btn a {
+  min-width: 100px;
+  font-size: 14px;
+  border-radius: 2px;
+  font-weight: 600;
+  border: none;
+  text-align: center;
+  display: inline-block;
+  padding: 8px 15px;
+}
+
+.product__item__text .product__btn .add-cart{
+  color: var(--black-normal);
+  border: 1px solid var(--white-dark);
+}
+
+.product__item__text .product__btn .detail{
+  color: var(--white-normal);
+  background: var(--black-light);
+} */
+
+/* .product__item__text .product__color__select {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -1183,11 +1207,14 @@ header {
 .product__item__text .product__color__select label input {
   position: absolute;
   visibility: hidden;
-}
+} */
 
 /*---------------------
   Shop
 -----------------------*/
+.shop{
+  margin-inline: 100px;
+}
 
 .shop__sidebar {
   padding-right: 20px;
@@ -1507,10 +1534,29 @@ header {
 
 .product__pagination {
   padding-top: 25px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product__pagination .number__page {
+  margin-inline: 20px;
+  display: inline-block;
 }
 
 .product__pagination a {
+  color: var(--black-light);
+}
+
+.product__pagination a:hover {
+  cursor: pointer;
+}
+
+.product__pagination i {
+  font-size: 25px;
+}
+
+.product__pagination .number__page a {
   display: inline-block;
   font-size: 16px;
   font-weight: 700;
@@ -1523,15 +1569,15 @@ header {
   text-align: center;
 }
 
-.product__pagination a.active {
+.product__pagination .number__page a.active {
   border-color: var(--black-normal);
 }
 
-.product__pagination a:hover {
+.product__pagination .number__page a:hover {
   border-color: var(--black-normal);
 }
 
-.product__pagination span {
+.product__pagination .number__page span {
   display: inline-block;
   font-size: 16px;
   font-weight: 700;
@@ -1550,6 +1596,7 @@ header {
 
 .product__breadcrumb {
   padding-left: 5px;
+  margin-bottom: 10px;
 }
 
 .product__breadcrumb a {
@@ -1576,22 +1623,39 @@ header {
 
 .product__pic {
   display: flex;
+  height: 400px;
+}
+
+.main__pic__detail {
+  padding: 5px;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
 }
 
 .main__pic__detail img {
-  width: 500px;
-  padding: 5px;
+  width: 100%;
 }
 
 .tab__pic__detail {
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  height: 400px;
+  overflow-y: scroll;
+}
+
+.tab__pic__item {
+  padding: 5px;
 }
 
 .tab__pic__item img {
-  padding: 5px;
+  border: 2px solid transparent;
   width: 100px;
+}
+
+.main__pic__detail img, .tab__pic__item img {
+  object-fit: cover;
+  aspect-ratio: 1/1;
 }
 
 .product__detail__main .product__detail__content {
@@ -1607,8 +1671,10 @@ header {
 }
 
 .detail__content--title {
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 600;
+  height: 80px;
+  overflow: hidden;
 }
 
 .product__rated,
@@ -1638,6 +1704,10 @@ header {
   font-size: 30px;
   font-weight: 700;
   color: var(--black-light);
+}
+
+.detail__content--color {
+  /* height: 250px; */
 }
 
 .product__details__option__color {
@@ -1692,9 +1762,13 @@ header {
   top: -3px;
   height: 31px;
   width: 31px;
-  border: 1px solid #e5e5e5;
+  border: 2px solid transparent;
   content: "";
   border-radius: 50%;
+}
+
+.product__details__option__color label.active:after {
+  border: 2px solid var(--black-light);
 }
 
 .product__details__option__color label input {
@@ -1740,7 +1814,7 @@ header {
   visibility: hidden;
 }
 
-.detail__content--quantity {
+.detail__content--quantity, .cart--quantity {
   display: flex;
 }
 
@@ -1764,6 +1838,31 @@ header {
   text-align: center;
   padding: 2px 10px;
 }
+
+/*CART QUANTITY*/
+
+.cart--quantity button {
+  border: 1px solid var(--white-dark);
+  background: none;
+  padding-inline: 10px;
+}
+
+.cart--quantity button i {
+  font-size: 10px;
+}
+
+.cart--quantity .quantity__input input {
+  border: none;
+  border-top: 1px solid var(--white-dark);
+  border-bottom: 1px solid var(--white-dark);
+  outline: none;
+  width: 40px;
+  height: 26px;
+  font-size: 13px;
+  text-align: center;
+}
+
+/*END CART QUANTITY*/
 
 .detail__content--btn {
   margin-top: 30px;
@@ -2286,6 +2385,15 @@ header {
   tbody
   tr
   td.product__cart__item
+  .product__cart__item__pic img{
+  width: 100px;
+}
+
+.shopping__cart__table
+  table
+  tbody
+  tr
+  td.product__cart__item
   .product__cart__item__text {
   overflow: hidden;
   padding-top: 21px;
@@ -2372,6 +2480,54 @@ header {
   /* color: var(--red-light); */
 }
 
+.cart--empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart--empty span{
+  font-size: 15px;
+  font-weight: 450;
+  color: var(--black-light);
+  margin-bottom: 20px;
+}
+
+.cart--empty span i{
+  font-size: 20px;
+  vertical-align: middle;
+  margin-inline: 5px;
+}
+
+.cart--empty span a{
+  text-decoration: underline;
+  color: var(--blue-link);
+}
+
+/* .select--all span, .total--price span{
+  font-size: 18px;
+  font-weight: 400;
+} */
+
+.select--all span, .cart--total span{
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.select--all span {
+  margin-inline: 20px;
+}
+
+.cart--total {
+  margin-inline: 20px;
+  text-align: right;
+}
+
+.cart--total span {
+  font-size: 17px;
+}
+
 .continue__btn.update__btn {
   text-align: right;
 }
@@ -2388,12 +2544,15 @@ header {
 
 .continue__btn a {
   color: var(--black-normal);
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 2px;
+  font-size: 12px;
+  font-weight: 500;
+  min-width: 200px;
+  text-align: center;
+  letter-spacing: 1px;
   text-transform: uppercase;
   border: 1px solid #e1e1e1;
-  padding: 14px 35px;
+  border-radius: 2px;
+  padding: 10px 30px;
   display: inline-block;
 }
 

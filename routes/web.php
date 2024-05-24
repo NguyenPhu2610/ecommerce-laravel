@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\user\ProductController;
 use App\Http\Middleware\Localization;
 
 /*
@@ -16,22 +17,16 @@ use App\Http\Middleware\Localization;
 */
 Route::get('lang/{locale}', [HomeController::class, 'lang']);
 
-Route::get('/welcome', function () {
-    return view('welcome');
-});
-
-Route::get('/shop', function () {
-    return view('user.pages.product');
-});
-
 Route::name('user.')->group(function () {
     Route::get('/shop', function () {
         return view('user.pages.product');
     })->name('shop');
     
-    Route::get('/product', function () {
-        return view('user.pages.detail');
-    })->name('product');
+    Route::get('/product/shop', [ProductController::class, 'shop'])->name('shop');
+
+    Route::get('/product/detail/{id}', [ProductController::class, 'detail'])->name('detail');
+
+    Route::get('/test', [ProductController::class, 'cart'])->name('cart');
 
     Route::get('/cart', function () {
         return view('user.pages.cart');

@@ -39,17 +39,6 @@
         $(this).css('background-image', 'url(' + bg + ')');
     });
 
-    //Search Switch
-    $('.search-switch').on('click', function () {
-        $('.search-model').fadeIn(400);
-    });
-
-    $('.search-close-switch').on('click', function () {
-        $('.search-model').fadeOut(400, function () {
-            $('#search-input').val('');
-        });
-    });
-
     /*------------------
 		Navigation
 	--------------------*/
@@ -61,7 +50,7 @@
     /*------------------
         Accordin Active
     --------------------*/
-    $('.collapse').on('shown.bs.collapse', function () {
+    $('.collapse').on('show.bs.collapse', function () {
         $(this).prev().addClass('active');
     });
 
@@ -105,10 +94,26 @@
     /*-------------------
 		Radio Btn
 	--------------------- */
-    $(".product__color__select label, .shop__sidebar__size label, .product__details__option__size label").on('click', function () {
-        $(".product__color__select label, .shop__sidebar__size label, .product__details__option__size label").removeClass('active');
-        $(this).addClass('active');
+    $(".product__details__option__color label").on("click",function(){
+        $(".product__details__option__color label").removeClass("active");
+        $(this).addClass("active");
     });
+
+    $(".shop__sidebar__size label").on("click",function(){
+        $(".shop__sidebar__size label,").removeClass("active");
+        $(this).addClass("active");
+    });
+
+    $(".product__details__option__size label").on("click",function(){
+        $(".product__details__option__size label").removeClass("active");
+        $(this).addClass("active");
+    });
+
+
+    // $(".product__details__option__color label, .shop__sidebar__size label, .product__details__option__size label").on('click', function () {
+    //     $(".product__details__option__color label, .shop__sidebar__size label, .product__details__option__size label").removeClass('active');
+    //     $(this).addClass('active');
+    // });
 
     /*-------------------
 		Scroll
@@ -217,9 +222,10 @@
 
 // USER DEFINE
 
-    var searchBox = document.querySelector('.header__search__box');
-    var searchInput = document.querySelector('.header__search');
-    // searchInput.onfocus = function() { searchBox.style.border = '2px solid red'; }
+//Search Focus
+var searchBox = document.querySelector('.header__search__box');
+var searchInput = document.querySelector('.header__search');
+// searchInput.onfocus = function() { searchBox.style.border = '2px solid red'; }
 
 document.querySelector('.header__search').addEventListener('focus', function(e) {
     searchBox.style.border = '2px solid #bebebe'; // Change to desired color
@@ -228,6 +234,53 @@ document.querySelector('.header__search').addEventListener('focus', function(e) 
 document.querySelector('.header__search').addEventListener('blur', function(e) {
     searchBox.style.border = '2px solid transparent'; // Change to desired color
 });
+
+//** Detail Picture Picked **
+
+// var mainImage = document.querySelector('.main__pic__detail .main-pic');
+// var itemImageClick = document.querySelectorAll('.tab__pic__item');
+// var itemImage = document.querySelectorAll('.tab__pic__item img');
+
+// var currentIndex = 0
+
+// mainImage.src = itemImage[currentIndex].src
+
+// // loop through all image
+// itemImageClick.forEach((item, index) => {
+//     item.addEventListener('click', () => {
+//         itemImage[currentIndex].style.border = '2px solid transparent';
+//         itemImage[index].style.border = '2px solid var(--red-dark)';
+//         currentIndex = index;
+//         mainImage.src = itemImage[index].src
+//     })
+// });
+
+// var minusButton = document.querySelector('.quantity--minus');
+// var plusButton= document.querySelector('.quantity--plus');
+// var quantityInput = document.querySelector('.quantity__input #quantity');
+
+// function incrementValue() {
+//     var value = parseInt(quantityInput.value, 10);
+//     quantityInput.value = isNaN(value) ? 1 : value + 1;
+// }
+
+// // Function to decrement value
+// function decrementValue() {
+//     var value = parseInt(quantityInput.value, 10);
+//     quantityInput.value = isNaN(value) || value < 2 ? 1 : value - 1;
+// }
+
+// // Event listener for plus button
+// plusButton.addEventListener('click', function() {
+//     incrementValue();
+// });
+
+// // Event listener for minus button
+// minusButton.addEventListener('click', function() {
+//     decrementValue();
+// });
+
+document.getElementById("cart-number").innerHTML = parseInt(JSON.parse(localStorage.getItem("data")), 10) || 0;
 
 
 // $('.header__search__box button').on('click', function (){
@@ -238,3 +291,10 @@ document.querySelector('.header__search').addEventListener('blur', function(e) {
 // $('body').on('click', function(){
     
 // });
+
+// jQuery(window).bind(
+//     "beforeunload", 
+//     function() { 
+//         return confirm("Do you really want to close?") 
+//     }
+// )
