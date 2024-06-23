@@ -13,10 +13,10 @@ Welcome to <b>Vandal Fashtion</b>, your ultimate destination for fashion-forward
 Stay updated with the latest fashion trends, exclusive deals, and new arrivals by subscribing to our newsletter. Follow us on social media and become part of our vibrant community of fashion enthusiasts.
 
 <h4>Tech Overview</h4>
-- Lang: HTML, CSS, Javascript, <b>PHP</b>
-- Framework/Template: <b>Laravel 10</b>, Blade Templates
-- Database: MSSQL
-- Tools: 
+- Lang: HTML, CSS, Javascript, <b>PHP</b> </br>
+- Framework/Template: <b>Laravel 10</b>, Blade Templates </br>
+- Database: MSSQL </br>
+- Tools: </br>
 
 <h4>Prerequisite</h4>
 
