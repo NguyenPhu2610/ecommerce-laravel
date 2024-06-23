@@ -7,6 +7,8 @@ Welcome to <b>Vandal Fashtion</b>, your ultimate destination for fashion-forward
 <ul>
     <li>Lang: HTML, CSS, Javascript, <b>PHP</b> </li>
     <li>Framework/Template: <b>Laravel 10</b>, Blade Templates </li>
+    <li>Feature: </li>
+    <li>Task: </li>
     <li>Database: MSSQL </li>
     <li>Tools: </li>
 </ul>
